@@ -34,8 +34,13 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import angular from '../assets/angular.png';
+import csharp from '../assets/csharp.png';
+
 
 export default {
+  angular,
+  csharp,
   email,
   mobile,
   api,
