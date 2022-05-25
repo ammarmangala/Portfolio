@@ -37,7 +37,7 @@ import spotify from '../assets/spotify.png';
 import angular from '../assets/angular.png';
 import csharp from '../assets/csharp.png';
 
-
+// eslint-disable-next-line
 export default {
   angular,
   csharp,
