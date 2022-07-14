@@ -19,7 +19,8 @@
     "react-tooltip": "^4.2.21",
     "source-map-resolve": "^0.6.0",
     "uuid": "8.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack-dev-middleware": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
