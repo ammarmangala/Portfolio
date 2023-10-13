@@ -16,29 +16,35 @@ const Testimonial = () => {
   };
 
   useEffect(() => {
-    const query = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
-
-    client.fetch(query).then((data) => {
+    const fetchTestimonials = async () => {
+      const query = '*[_type == "testimonials"]';
+      const data = await client.fetch(query);
       setTestimonials(data);
-    });
+    };
 
-    client.fetch(brandsQuery).then((data) => {
+    const fetchBrands = async () => {
+      const brandsQuery = '*[_type == "brands"]';
+      const data = await client.fetch(brandsQuery);
       setBrands(data);
-    });
+    };
+
+    fetchTestimonials();
+    fetchBrands();
   }, []);
+
+  const testimonial = testimonials[currentIndex];
 
   return (
     <>
-      {testimonials.length && (
+      {testimonial && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(testimonials[currentIndex].imgurl)} alt={testimonials[currentIndex].name} />
+            <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} />
             <div className="app__testimonial-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
+              <p className="p-text">{testimonial.feedback}</p>
               <div>
-                <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+                <h4 className="bold-text">{testimonial.name}</h4>
+                <h5 className="p-text">{testimonial.company}</h5>
               </div>
             </div>
           </div>
